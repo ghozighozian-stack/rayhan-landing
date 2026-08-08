@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RAYHAN.AK — Streetwear & Modest Wear untuk Gen Z Indonesia</title>
+<style>
+  :root {
+    --orange: #FF6B35;
+    --gold: #F7B801;
+    --brown: #6F4E37;
+    --cream: #FFF8DC;
+    --red: #d64545;
+    --green: #2e7d32;
+    --max-width: 1200px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--cream);
+    color: #2b2117;
+    line-height: 1.6;
+  }
+
+  img, svg { display: block; max-width: 100%; }
+
+  a { text-decoration: none; color: inherit; }
+
+  .container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  /* ---------- NAV ---------- */
+  header.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: var(--cream);
+    border-bottom: 2px solid rgba(111, 78, 55, 0.15);
+  }
+
+  .nav-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    color: var(--brown);
+  }
+
+  .logo span { color: var(--orange); }
+
+  nav.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 24px;
+  }
+
+  nav.main-nav a {
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--brown);
+    transition: color 0.2s ease;
+  }
+
+  nav.main-nav a:hover { color: var(--orange); }
+
+  @media (max-width: 600px) {
+    nav.main-nav ul { gap: 14px; }
+    nav.main-nav a { font-size: 13px; }
+    .logo { font-size: 18px; }
+  }
+
+  /* ---------- HERO ---------- */
+  .hero {
+    min-height: 420px;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, var(--orange) 0%, var(--gold) 100%);
+    color: #fff;
+    padding: 40px 20px;
+  }
+
+  .hero-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+    line-height: 1.25;
+    font-weight: 800;
+    margin-bottom: 16px;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.15);
+  }
+
+  .hero p.subheading {
+    font-size: 16px;
+    max-width: 560px;
+    margin: 0 auto 28px;
+    color: #fff8ecdd;
+    font-weight: 500;
+  }
+
+  .cta-button {
+    display: inline-block;
+    background: var(--brown);
+    color: #fff;
+    font-weight: 700;
+    font-size: 16px;
+    padding: 16px 36px;
+    border-radius: 999px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+    transition: transform 0.15s ease, background 0.2s ease;
+  }
+
+  .cta-button:hover {
+    background: #5a3d2c;
+    transform: translateY(-2px);
+  }
+
+  @media (min-width: 768px) {
+    .hero { min-height: 480px; padding: 40px; }
+    .hero h1 { font-size: 48px; }
+    .hero p.subheading { font-size: 19px; }
+  }
+
+  /* ---------- SECTION HEADINGS ---------- */
+  .section {
+    padding: 40px 20px;
+  }
+
+  .section h2 {
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--brown);
+    text-align: center;
+    margin-bottom: 8px;
+    line-height: 1.3;
+  }
+
+  .section .section-sub {
+    text-align: center;
+    color: #7a6a58;
+    margin-bottom: 32px;
+    font-size: 15px;
+  }
+
+  @media (min-width: 768px) {
+    .section { padding: 40px; }
+    .section h2 { font-size: 32px; }
+  }
+
+  /* ---------- PRODUCTS ---------- */
+  .products-wrap { max-width: var(--max-width); margin: 0 auto; }
+
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  @media (min-width: 640px) {
+    .products-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+
+  @media (min-width: 1024px) {
+    .products-grid { grid-template-columns: repeat(5, 1fr); gap: 24px; }
+  }
+
+  .product-card {
+    background: #fff;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 4px 14px rgba(111, 78, 55, 0.12);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 22px rgba(111, 78, 55, 0.2);
+  }
+
+  .product-image {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255,255,255,0.85);
+    font-weight: 800;
+    font-size: 13px;
+    text-align: center;
+    letter-spacing: 0.5px;
+    padding: 10px;
+  }
+
+  .product-info {
+    padding: 14px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .product-name {
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--brown);
+  }
+
+  .product-price {
+    font-weight: 800;
+    font-size: 15px;
+    color: var(--orange);
+  }
+
+  .product-desc {
+    font-size: 12px;
+    color: #8a7a68;
+    flex: 1;
+  }
+
+  /* ---------- FORM SECTION ---------- */
+  .form-section {
+    background: linear-gradient(180deg, rgba(247,184,1,0.15), rgba(255,107,53,0.08));
+  }
+
+  .form-card {
+    max-width: 500px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 18px;
+    padding: 28px 24px;
+    box-shadow: 0 10px 30px rgba(111, 78, 55, 0.18);
+    position: relative;
+  }
+
+  .form-group { margin-bottom: 18px; }
+
+  .form-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--brown);
+    margin-bottom: 6px;
+  }
+
+  .form-group input {
+    width: 100%;
+    padding: 14px 16px;
+    font-size: 15px;
+    border: 2px solid #e8ddce;
+    border-radius: 10px;
+    background: #fffdf9;
+    transition: border-color 0.2s ease;
+    outline: none;
+    font-family: inherit;
+  }
+
+  .form-group input:focus {
+    border-color: var(--orange);
+  }
+
+  .form-group input.input-error {
+    border-color: var(--red);
+  }
+
+  .field-error {
+    color: var(--red);
+    font-size: 12px;
+    margin-top: 5px;
+    min-height: 14px;
+  }
+
+  .submit-btn {
+    width: 100%;
+    padding: 16px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+    background: var(--orange);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: background 0.2s ease, transform 0.15s ease;
+  }
+
+  .submit-btn:hover:not(:disabled) {
+    background: #e2551f;
+    transform: translateY(-1px);
+  }
+
+  .submit-btn:disabled {
+    background: #d8b79b;
+    cursor: not-allowed;
+    transform: none;
+  }
+
+  .spinner {
+    width: 16px;
+    height: 16px;
+    border: 3px solid rgba(255,255,255,0.4);
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+    display: none;
+  }
+
+  .submit-btn.loading .spinner { display: inline-block; }
+
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+
+  .form-message {
+    margin-top: 16px;
+    padding: 14px 16px;
+    border-radius: 10px;
+    font-size: 14px;
+    text-align: center;
+    display: none;
+  }
+
+  .form-message.show {
+    display: block;
+    animation: fadeIn 0.4s ease;
+  }
+
+  .form-message.success {
+    background: rgba(46, 125, 50, 0.1);
+    color: var(--green);
+    font-weight: 600;
+  }
+
+  .form-message.error {
+    background: rgba(214, 69, 69, 0.1);
+    color: var(--red);
+    font-weight: 600;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-6px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer.site-footer {
+    background: var(--brown);
+    color: #fff;
+    padding: 30px 20px;
+    text-align: center;
+  }
+
+  footer.site-footer .footer-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+  }
+
+  .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 14px;
+  }
+
+  .social-links a {
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--gold);
+    padding: 8px 16px;
+    border: 1.5px solid var(--gold);
+    border-radius: 999px;
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+
+  .social-links a:hover {
+    background: var(--gold);
+    color: var(--brown);
+  }
+
+  footer.site-footer p {
+    font-size: 12px;
+    color: rgba(255,255,255,0.7);
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="nav-inner">
+    <div class="logo">RAYHAN<span>.AK</span></div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="#produk">Produk</a></li>
+        <li><a href="#form">Pesan</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <h1>Pesan Merchandise RAYHAN.AK Sekarang</h1>
+    <p class="subheading">Koleksi pakaian streetwear dan modest wear untuk Gen Z Indonesia</p>
+    <a href="#form" class="cta-button">Pesan Sekarang</a>
+  </div>
+</section>
+
+<section class="section" id="produk">
+  <h2>Koleksi Kami</h2>
+  <p class="section-sub">5 pilihan favorit yang lagi hits</p>
+  <div class="products-wrap">
+    <div class="products-grid" id="products-grid"></div>
+  </div>
+</section>
+
+<section class="section form-section" id="form">
+  <h2>Tertarik? Hubungi kami sekarang!</h2>
+  <p class="section-sub">Isi form di bawah, tim kami akan hubungi via WhatsApp</p>
+
+  <div class="form-card">
+    <form id="lead-form" novalidate>
+      <div class="form-group">
+        <label for="name">Nama Lengkap</label>
+        <input type="text" id="name" name="name" placeholder="Nama Lengkap" autocomplete="name">
+        <div class="field-error" id="name-error"></div>
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Nomor HP</label>
+        <input type="tel" id="phone" name="phone" placeholder="08XX-XXXX-XXXX" autocomplete="tel" maxlength="14">
+        <div class="field-error" id="phone-error"></div>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email <span style="font-weight:400;color:#a8977f;">(opsional)</span></label>
+        <input type="email" id="email" name="email" placeholder="email@example.com" autocomplete="email">
+        <div class="field-error" id="email-error"></div>
+      </div>
+
+      <button type="submit" class="submit-btn" id="submit-btn">
+        <span class="spinner" id="spinner"></span>
+        <span id="submit-label">Pesan Sekarang</span>
+      </button>
+    </form>
+
+    <div class="form-message success" id="success-message">
+      Terima kasih! Kami akan hubungi Anda segera via WhatsApp.
+    </div>
+    <div class="form-message error" id="error-message"></div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="social-links">
+      <a href="https://instagram.com/rayhanakbuy" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://tiktok.com/@rayhanakbuy" target="_blank" rel="noopener">TikTok</a>
+    </div>
+    <p>&copy; <span id="year"></span> RAYHAN.AK. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  // ---------- YEAR ----------
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // ---------- PRODUCTS ----------
+  const products = [
+    { name: "Osakaa Shirt",     price: 150000, desc: "Comfortable streetwear shirt", color: "#FF6B35" },
+    { name: "Mybasic Tee",      price: 80000,  desc: "Essential basic tee",           color: "#F7B801" },
+    { name: "POLOS Polo",       price: 120000, desc: "Smart casual polo",             color: "#6F4E37" },
+    { name: "Manchief Linen",   price: 180000, desc: "Premium linen shirt",           color: "#C97A3D" },
+    { name: "Helten Flannel",   price: 140000, desc: "Classic flannel pattern",       color: "#A85D33" },
+  ];
+
+  function formatRupiah(num) {
+    return "Rp " + num.toLocaleString("id-ID");
+  }
+
+  const grid = document.getElementById('products-grid');
+  products.forEach(p => {
+    const card = document.createElement('div');
+    card.className = 'product-card';
+    card.innerHTML = `
+      <div class="product-image" style="background:${p.color};">${p.name}</div>
+      <div class="product-info">
+        <div class="product-name">${p.name}</div>
+        <div class="product-price">${formatRupiah(p.price)}</div>
+        <div class="product-desc">${p.desc}</div>
+      </div>
+    `;
+    grid.appendChild(card);
+  });
+
+  // ---------- FORM ----------
+  const form = document.getElementById('lead-form');
+  const nameInput = document.getElementById('name');
+  const phoneInput = document.getElementById('phone');
+  const emailInput = document.getElementById('email');
+  const nameError = document.getElementById('name-error');
+  const phoneError = document.getElementById('phone-error');
+  const emailError = document.getElementById('email-error');
+  const submitBtn = document.getElementById('submit-btn');
+  const submitLabel = document.getElementById('submit-label');
+  const successMessage = document.getElementById('success-message');
+  const errorMessage = document.getElementById('error-message');
+  const formCard = document.querySelector('.form-card');
+
+  const WEBHOOK_URL = "http://wilt-regain-divinity.ngrok-free.dev/webhook/test-supabase";
+
+  // Auto-format phone number: 081234567890 -> 0812-3456-7890
+  phoneInput.addEventListener('input', () => {
+    let digits = phoneInput.value.replace(/\D/g, '').slice(0, 13);
+    let formatted = digits;
+    if (digits.length > 4 && digits.length <= 8) {
+      formatted = digits.slice(0, 4) + '-' + digits.slice(4);
+    } else if (digits.length > 8) {
+      formatted = digits.slice(0, 4) + '-' + digits.slice(4, 8) + '-' + digits.slice(8);
+    }
+    phoneInput.value = formatted;
+    validateField('phone');
+  });
+
+  nameInput.addEventListener('input', () => validateField('name'));
+  emailInput.addEventListener('input', () => validateField('email'));
+
+  function validateField(field) {
+    let valid = true;
+
+    if (field === 'name') {
+      const val = nameInput.value.trim();
+      if (!val) {
+        nameError.textContent = 'Nama harus diisi';
+        nameInput.classList.add('input-error');
+        valid = false;
+      } else {
+        nameError.textContent = '';
+        nameInput.classList.remove('input-error');
+      }
+    }
+
+    if (field === 'phone') {
+      const digits = phoneInput.value.replace(/\D/g, '');
+      const phoneRegex = /^08\d{8,11}$/;
+      if (!digits) {
+        phoneError.textContent = 'Nomor HP harus valid (08XX)';
+        phoneInput.classList.add('input-error');
+        valid = false;
+      } else if (!phoneRegex.test(digits)) {
+        phoneError.textContent = 'Nomor HP harus valid (08XX)';
+        phoneInput.classList.add('input-error');
+        valid = false;
+      } else {
+        phoneError.textContent = '';
+        phoneInput.classList.remove('input-error');
+      }
+    }
+
+    if (field === 'email') {
+      const val = emailInput.value.trim();
+      if (val && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val)) {
+        emailError.textContent = 'Format email tidak valid';
+        emailInput.classList.add('input-error');
+        valid = false;
+      } else {
+        emailError.textContent = '';
+        emailInput.classList.remove('input-error');
+      }
+    }
+
+    return valid;
+  }
+
+  function validateAll() {
+    const nameValid = validateField('name');
+    const phoneValid = validateField('phone');
+    const emailValid = validateField('email');
+    return nameValid && phoneValid && emailValid;
+  }
+
+  function setLoading(isLoading) {
+    submitBtn.disabled = isLoading;
+    submitBtn.classList.toggle('loading', isLoading);
+    submitLabel.textContent = isLoading ? 'Sending...' : 'Pesan Sekarang';
+  }
+
+  function showSuccess() {
+    errorMessage.classList.remove('show');
+    successMessage.classList.add('show');
+    form.style.display = 'none';
+
+    setTimeout(() => {
+      successMessage.classList.remove('show');
+      form.style.display = 'block';
+    }, 5000);
+  }
+
+  function showError(msg) {
+    successMessage.classList.remove('show');
+    errorMessage.textContent = `Ada kesalahan: ${msg}`;
+    errorMessage.classList.add('show');
+  }
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    errorMessage.classList.remove('show');
+
+    if (!validateAll()) {
+      return;
+    }
+
+    const payload = {
+      name: nameInput.value.trim(),
+      phone: phoneInput.value.trim(),
+      email: emailInput.value.trim(),
+    };
+
+    setLoading(true);
+
+    try {
+      const response = await fetch(WEBHOOK_URL, {
+        method: 'POST',
+        headers: { 
+  'Content-Type': 'application/json',
+  'ngrok-skip-browser-warning': 'true'
+},
+        body: JSON.stringify(payload),
+      });
+
+      let data = null;
+      try {
+        data = await response.json();
+      } catch (parseErr) {
+        data = null;
+      }
+
+      if (response.ok && data && data.id) {
+        form.reset();
+        showSuccess();
+      } else if (response.ok) {
+        // Response ok but no id field returned by webhook
+        showError('Respon server tidak sesuai (id tidak ditemukan).');
+      } else {
+        showError(`Server merespon dengan status ${response.status}`);
+      }
+    } catch (err) {
+      showError(err.message || 'Tidak dapat terhubung ke server.');
+    } finally {
+      setLoading(false);
+    }
+  });
+</script>
+
+</body>
+</html>
