@@ -1,0 +1,7 @@
+# Video working files: large binaries regenerated from the source upload.
+# The composition HTML, cards and storyboard under videos/ stay tracked.
+videos/**/*.mov
+videos/**/*.mp4
+videos/**/*.mp3
+videos/**/*.wav
+videos/**/frames/
