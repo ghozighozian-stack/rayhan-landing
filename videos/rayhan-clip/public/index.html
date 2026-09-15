@@ -1,0 +1,942 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>RAYHAN.AK — Recut</title>
+    <style>
+      @font-face {
+        font-family: "Inter";
+        src: url("fonts/Inter-400-latin.woff2") format("woff2");
+        font-weight: 400;
+        font-display: block;
+      }
+      @font-face {
+        font-family: "Inter";
+        src: url("fonts/Inter-700-latin.woff2") format("woff2");
+        font-weight: 700;
+        font-display: block;
+      }
+
+      :root {
+        /* RAYHAN.AK brand palette, lifted from the landing page's own tokens. */
+        --bg: #0a0a0a;
+        --ink: #fff8dc;
+        --text: #fff8dc;
+        --accent-0: #ff6b35;
+        --accent-1: #f7b801;
+        --accent-2: #6f4e37;
+        --accent-3: #fff8dc;
+        --accent-4: #e2551f;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background: #000;
+        font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+      }
+      #stage {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+
+      .video-wrapper {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 1080px;
+        height: 1920px;
+        overflow: hidden;
+      }
+      .video-wrapper video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .card-host {
+        position: absolute;
+        pointer-events: none;
+        overflow: hidden;
+      }
+      .card-host .card {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+      .card-host .char {
+        display: inline-block;
+        visibility: visible;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="stage"
+      data-composition-id="talking-head-recut"
+      data-start="0"
+      data-duration="9.1"
+      data-fps="30"
+      data-width="1080"
+      data-height="1920"
+    >
+      <!-- Layer 1: the source clip, full-bleed and untouched. -->
+      <div class="video-wrapper" id="video-wrap">
+        <video
+          id="bg-video"
+          src="input-video.mp4"
+          muted
+          playsinline
+          data-start="0"
+          data-duration="9.1"
+          data-track-index="1"
+        ></video>
+      </div>
+      <!-- Program audio rides a separate track so the visual video stays muted. -->
+      <audio
+        id="source-audio"
+        src="input-video.mp4"
+        data-start="0"
+        data-duration="9.1"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
+
+      <!-- Layer 2: overlay cards, one host per card at its zone bounds. -->
+      <div
+        id="host-card-01"
+        class="card-host clip"
+        data-card-id="card-01"
+        data-start="0.2000"
+        data-duration="1.4000"
+        data-track-index="2"
+        style="left: 0; top: 0; width: 1080px; height: 1920px; visibility: hidden; opacity: 0"
+      >
+<div class="card" data-card-id="card-01">
+  <style>
+    .card[data-card-id="card-01"] .root {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+      background: transparent;
+      color: var(--ink);
+      font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+    }
+    .card[data-card-id="card-01"] .stamp {
+      position: absolute;
+      left: 56px;
+      top: 104px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 14px;
+    }
+    .card[data-card-id="card-01"] .mark {
+      display: block;
+      padding: 14px 22px 16px;
+      background: var(--accent-0);
+      color: #24170c;
+      font-size: 42px;
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: -0.02em;
+      box-shadow: 8px 8px 0 rgba(10, 10, 10, 0.55);
+    }
+    .card[data-card-id="card-01"] .rule-wrap {
+      display: block;
+      width: 300px;
+      height: 6px;
+      overflow: hidden;
+    }
+    .card[data-card-id="card-01"] .rule {
+      display: block;
+      width: 0;
+      height: 6px;
+      background: var(--accent-1);
+    }
+    .card[data-card-id="card-01"] .meta {
+      display: block;
+      padding: 7px 12px;
+      background: rgba(10, 10, 10, 0.72);
+      color: var(--accent-3);
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: 0.22em;
+    }
+  </style>
+
+  <div class="root">
+    <div class="stamp">
+      <span
+        id="card-01-mark"
+        class="mark"
+        data-anim="slide-in"
+        data-anim-at="0.05"
+        data-anim-duration="0.45"
+        data-anim-from="left"
+        data-anim-distance="90"
+        >RAYHAN.AK</span
+      >
+      <span class="rule-wrap">
+        <span
+          id="card-01-rule"
+          class="rule"
+          data-anim="grow-x"
+          data-anim-at="0.34"
+          data-anim-duration="0.4"
+          data-anim-target-w="300"
+        ></span>
+      </span>
+      <span
+        id="card-01-meta"
+        class="meta"
+        data-anim="fade-in"
+        data-anim-at="0.5"
+        data-anim-duration="0.35"
+        >STREETWEAR × MODEST WEAR</span
+      >
+    </div>
+  </div>
+</div>
+      </div>
+
+      <div
+        id="host-card-02"
+        class="card-host clip"
+        data-card-id="card-02"
+        data-start="0.3667"
+        data-duration="2.6000"
+        data-track-index="3"
+        style="left: 0; top: 1344px; width: 1080px; height: 576px; visibility: hidden; opacity: 0"
+      >
+<div class="card" data-card-id="card-02">
+  <style>
+    .card[data-card-id="card-02"] .root {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+      background: transparent;
+      color: var(--ink);
+      font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+    }
+    .card[data-card-id="card-02"] .caption-slot {
+      position: absolute;
+      left: 44px;
+      right: 44px;
+      bottom: 168px;
+      min-height: 220px;
+    }
+    .card[data-card-id="card-02"] .phrase {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-end;
+      gap: 12px 14px;
+    }
+    .card[data-card-id="card-02"] .char {
+      display: inline-block;
+      padding: 8px 16px 12px;
+      background: rgba(10, 10, 10, 0.82);
+      color: var(--accent-3);
+      font-size: 62px;
+      font-weight: 700;
+      line-height: 1.02;
+      letter-spacing: -0.02em;
+    }
+    .card[data-card-id="card-02"] .char.hot {
+      background: var(--accent-0);
+      color: #24170c;
+    }
+    .card[data-card-id="card-02"] .char.warm {
+      background: var(--accent-1);
+      color: #2a1c0d;
+    }
+    .card[data-card-id="card-02"] .tick {
+      position: absolute;
+      left: 0;
+      bottom: -28px;
+      width: 0;
+      height: 8px;
+      background: var(--accent-0);
+    }
+  </style>
+
+  <div class="root">
+    <div class="caption-slot">
+      <div id="card-02-pa" class="phrase" data-layout-allow-overlap>
+        <span class="char hot">Streetwear</span>
+        <span class="char">&amp;</span>
+        <span class="char">modest</span>
+        <span class="char">wear</span>
+      </div>
+      <div id="card-02-pb" class="phrase" data-layout-allow-overlap>
+        <span class="char">buat</span>
+        <span class="char">Gen</span>
+        <span class="char">Z</span>
+        <span class="char warm">Indonesia</span>
+      </div>
+      <span
+        id="card-02-tick"
+        class="tick"
+        data-anim="grow-x"
+        data-anim-at="0.1"
+        data-anim-duration="2.4"
+        data-anim-target-w="992"
+      ></span>
+    </div>
+  </div>
+</div>
+      </div>
+
+      <div
+        id="host-card-03"
+        class="card-host clip"
+        data-card-id="card-03"
+        data-start="3.0667"
+        data-duration="2.1667"
+        data-track-index="4"
+        style="left: 0; top: 0; width: 1080px; height: 1920px; visibility: hidden; opacity: 0"
+      >
+<div class="card" data-card-id="card-03">
+  <style>
+    .card[data-card-id="card-03"] .root {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+      background: transparent;
+      color: var(--ink);
+      font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+    }
+    .card[data-card-id="card-03"] .scrim {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 760px;
+      bottom: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(10, 10, 10, 0) 0%,
+        rgba(10, 10, 10, 0.62) 34%,
+        rgba(10, 10, 10, 0.88) 100%
+      );
+    }
+    .card[data-card-id="card-03"] .slab-a {
+      position: absolute;
+      right: 0;
+      top: 812px;
+      width: 306px;
+      height: 158px;
+      background: var(--accent-0);
+    }
+    .card[data-card-id="card-03"] .slab-c {
+      position: absolute;
+      left: 0;
+      top: 1006px;
+      width: 152px;
+      height: 92px;
+      background: var(--accent-2);
+    }
+    .card[data-card-id="card-03"] .stripe-wrap {
+      position: absolute;
+      left: -30px;
+      top: 1128px;
+      width: 1140px;
+      height: 10px;
+      overflow: hidden;
+      transform: rotate(-4deg);
+    }
+    .card[data-card-id="card-03"] .stripe {
+      display: block;
+      width: 0;
+      height: 10px;
+      background: var(--accent-3);
+    }
+    .card[data-card-id="card-03"] .kicker {
+      position: absolute;
+      left: 56px;
+      top: 1008px;
+      padding: 9px 16px;
+      background: var(--ink);
+      color: #0a0a0a;
+      font-size: 22px;
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: 0.26em;
+    }
+    .card[data-card-id="card-03"] .lockup {
+      position: absolute;
+      left: 56px;
+      right: 56px;
+      top: 1240px;
+      display: flex;
+      align-items: center;
+      gap: 34px;
+    }
+    .card[data-card-id="card-03"] .numeral {
+      display: block;
+      font-size: 344px;
+      font-weight: 700;
+      line-height: 0.82;
+      letter-spacing: -0.06em;
+      color: var(--accent-1);
+    }
+    .card[data-card-id="card-03"] .title {
+      display: block;
+      margin: 0;
+    }
+    .card[data-card-id="card-03"] .title-line {
+      display: block;
+      font-size: 92px;
+      font-weight: 700;
+      line-height: 0.98;
+      letter-spacing: -0.035em;
+      color: var(--accent-3);
+    }
+  </style>
+
+  <div class="root">
+    <div
+      id="card-03-scrim"
+      class="scrim"
+      data-anim="fade-in"
+      data-anim-at="0"
+      data-anim-duration="0.4"
+    ></div>
+
+    <div
+      id="card-03-slab-a"
+      class="slab-a"
+      data-anim="slide-in"
+      data-anim-at="0.08"
+      data-anim-duration="0.46"
+      data-anim-from="right"
+      data-anim-distance="320"
+    ></div>
+    <div
+      id="card-03-slab-c"
+      class="slab-c"
+      data-layout-allow-overflow
+      data-anim="slide-in"
+      data-anim-at="0.18"
+      data-anim-duration="0.46"
+      data-anim-from="left"
+      data-anim-distance="170"
+    ></div>
+
+    <span class="stripe-wrap" data-layout-allow-overflow>
+      <span
+        id="card-03-stripe"
+        class="stripe"
+        data-layout-allow-overflow
+        data-anim="grow-x"
+        data-anim-at="0.3"
+        data-anim-duration="0.55"
+        data-anim-target-w="1140"
+      ></span>
+    </span>
+
+    <span
+      id="card-03-kicker"
+      class="kicker"
+      data-anim="fade-in"
+      data-anim-at="0.22"
+      data-anim-duration="0.3"
+      >KOLEKSI KAMI</span
+    >
+
+    <div class="lockup">
+      <span
+        id="card-03-numeral"
+        class="numeral"
+        data-anim="scale-pop"
+        data-anim-at="0.42"
+        data-anim-duration="0.5"
+        >5</span
+      >
+      <span class="title">
+        <span
+          id="card-03-t1"
+          class="title-line"
+          data-anim="mask-reveal"
+          data-anim-at="0.62"
+          data-anim-duration="0.42"
+          data-anim-direction="left"
+          >PILIHAN</span
+        >
+        <span
+          id="card-03-t2"
+          class="title-line"
+          data-anim="mask-reveal"
+          data-anim-at="0.74"
+          data-anim-duration="0.42"
+          data-anim-direction="left"
+          >FAVORIT</span
+        >
+      </span>
+    </div>
+  </div>
+</div>
+      </div>
+
+      <div
+        id="host-card-04"
+        class="card-host clip"
+        data-card-id="card-04"
+        data-start="5.3000"
+        data-duration="2.6000"
+        data-track-index="5"
+        style="left: 0; top: 1344px; width: 1080px; height: 576px; visibility: hidden; opacity: 0"
+      >
+<div class="card" data-card-id="card-04">
+  <style>
+    .card[data-card-id="card-04"] .root {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+      background: transparent;
+      color: var(--ink);
+      font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+    }
+    .card[data-card-id="card-04"] .caption-slot {
+      position: absolute;
+      left: 44px;
+      right: 44px;
+      bottom: 168px;
+      min-height: 220px;
+    }
+    .card[data-card-id="card-04"] .phrase {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-end;
+      gap: 12px 14px;
+    }
+    .card[data-card-id="card-04"] .char {
+      display: inline-block;
+      padding: 8px 16px 12px;
+      background: rgba(10, 10, 10, 0.82);
+      color: var(--accent-3);
+      font-size: 62px;
+      font-weight: 700;
+      line-height: 1.02;
+      letter-spacing: -0.02em;
+    }
+    .card[data-card-id="card-04"] .char.hot {
+      background: var(--accent-0);
+      color: #24170c;
+    }
+    .card[data-card-id="card-04"] .char.warm {
+      background: var(--accent-1);
+      color: #2a1c0d;
+    }
+    .card[data-card-id="card-04"] .tick {
+      position: absolute;
+      left: 0;
+      bottom: -28px;
+      width: 0;
+      height: 8px;
+      background: var(--accent-1);
+    }
+  </style>
+
+  <div class="root">
+    <div class="caption-slot">
+      <div id="card-04-pa" class="phrase" data-layout-allow-overlap>
+        <span class="char">yang</span>
+        <span class="char">lagi</span>
+        <span class="char hot">hits</span>
+      </div>
+      <div id="card-04-pb" class="phrase" data-layout-allow-overlap>
+        <span class="char">sekarang</span>
+        <span class="char">di</span>
+        <span class="char warm">RAYHAN.AK</span>
+      </div>
+      <span
+        id="card-04-tick"
+        class="tick"
+        data-anim="grow-x"
+        data-anim-at="0.1"
+        data-anim-duration="2.4"
+        data-anim-target-w="992"
+      ></span>
+    </div>
+  </div>
+</div>
+      </div>
+
+      <div
+        id="host-card-05"
+        class="card-host clip"
+        data-card-id="card-05"
+        data-start="7.9667"
+        data-duration="1.1333"
+        data-track-index="6"
+        style="left: 0; top: 0; width: 1080px; height: 1920px; visibility: hidden; opacity: 0"
+      >
+<div class="card" data-card-id="card-05">
+  <style>
+    .card[data-card-id="card-05"] .root {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+      background: transparent;
+      color: var(--ink);
+      font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+    }
+    .card[data-card-id="card-05"] .scrim {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(10, 10, 10, 0.1) 0%,
+        rgba(10, 10, 10, 0.24) 26%,
+        rgba(10, 10, 10, 0.72) 52%,
+        rgba(10, 10, 10, 0.88) 100%
+      );
+    }
+    .card[data-card-id="card-05"] .bar-top {
+      position: absolute;
+      left: 56px;
+      top: 694px;
+      width: 0;
+      height: 12px;
+      background: var(--accent-0);
+    }
+    .card[data-card-id="card-05"] .lockup {
+      position: absolute;
+      left: 56px;
+      right: 56px;
+      top: 748px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 26px;
+    }
+    .card[data-card-id="card-05"] .title {
+      display: block;
+      margin: 0;
+      font-size: 116px;
+      font-weight: 700;
+      line-height: 0.94;
+      letter-spacing: -0.045em;
+      color: var(--accent-3);
+    }
+    .card[data-card-id="card-05"] .detail {
+      display: block;
+      padding: 9px 18px;
+      background: var(--accent-1);
+      color: #2a1c0d;
+      font-size: 34px;
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: 0.02em;
+    }
+    .card[data-card-id="card-05"] .wordmark {
+      position: absolute;
+      left: 56px;
+      bottom: 216px;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+    .card[data-card-id="card-05"] .wordmark-chip {
+      display: block;
+      padding: 14px 22px 16px;
+      background: var(--accent-0);
+      color: #24170c;
+      font-size: 46px;
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: -0.02em;
+      box-shadow: 8px 8px 0 rgba(10, 10, 10, 0.55);
+    }
+    .card[data-card-id="card-05"] .dot {
+      display: block;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--accent-1);
+    }
+  </style>
+
+  <div class="root">
+    <div
+      id="card-05-scrim"
+      class="scrim"
+      data-anim="fade-in"
+      data-anim-at="0"
+      data-anim-duration="0.34"
+    ></div>
+
+    <span
+      id="card-05-bar"
+      class="bar-top"
+      data-anim="grow-x"
+      data-anim-at="0.12"
+      data-anim-duration="0.46"
+      data-anim-target-w="300"
+    ></span>
+
+    <div class="lockup">
+      <span
+        id="card-05-title"
+        class="title"
+        data-anim="mask-reveal"
+        data-anim-at="0.22"
+        data-anim-duration="0.44"
+        data-anim-direction="left"
+        >PESAN SEKARANG</span
+      >
+      <span
+        id="card-05-detail"
+        class="detail"
+        data-anim="fade-in"
+        data-anim-at="0.46"
+        data-anim-duration="0.3"
+        >via WhatsApp</span
+      >
+    </div>
+
+    <div class="wordmark">
+      <span
+        id="card-05-chip"
+        class="wordmark-chip"
+        data-anim="slide-in"
+        data-anim-at="0.5"
+        data-anim-duration="0.4"
+        data-anim-from="left"
+        data-anim-distance="80"
+        >RAYHAN.AK</span
+      >
+      <span
+        id="card-05-dot"
+        class="dot"
+        data-anim="scale-pop"
+        data-anim-at="0.72"
+        data-anim-duration="0.3"
+      ></span>
+    </div>
+  </div>
+</div>
+      </div>
+
+      <script src="vendor/gsap.min.js"></script>
+      <script>
+        (function () {
+          const tl = window.gsap.timeline({ paused: true });
+          const host = (id) => '.card-host[data-card-id="' + id + '"]';
+          const el = (id, sel) => '.card[data-card-id="' + id + '"] ' + sel;
+
+          // Card enter / exit helper — the runtime owns clip visibility windows,
+          // these tweens only handle the cross-fade inside each window.
+          function enter(id, at, dur) {
+            tl.set(host(id), { visibility: "visible" }, at);
+            tl.fromTo(host(id), { opacity: 0 }, { opacity: 1, duration: dur, ease: "power2.out" }, at);
+          }
+          function exit(id, at, dur, hideAt) {
+            tl.to(host(id), { opacity: 0, duration: dur, ease: "power2.in" }, at);
+            tl.set(host(id), { visibility: "hidden" }, hideAt);
+          }
+          // Word-chip caption pop.
+          function words(sel, at) {
+            tl.fromTo(
+              sel + " .char",
+              { opacity: 0, y: 16, scale: 0.86 },
+              {
+                opacity: 1,
+                y: 0,
+                scale: 1,
+                duration: 0.34,
+                ease: "back.out(1.5)",
+                stagger: 0.06,
+              },
+              at,
+            );
+          }
+
+          /* ── card-01 · brand stamp [0.2000 → 1.6000] ───────────────────── */
+          enter("card-01", 0.2, 0.35);
+          tl.fromTo(
+            el("card-01", "#card-01-mark"),
+            { opacity: 0, x: -90 },
+            { opacity: 1, x: 0, duration: 0.45, ease: "power3.out" },
+            0.2667,
+          );
+          tl.fromTo(
+            el("card-01", "#card-01-rule"),
+            { width: 0 },
+            { width: 300, duration: 0.4, ease: "power2.out" },
+            0.5333,
+          );
+          tl.fromTo(
+            el("card-01", "#card-01-meta"),
+            { opacity: 0 },
+            { opacity: 1, duration: 0.35, ease: "power2.out" },
+            0.7,
+          );
+          exit("card-01", 1.3, 0.3, 1.6);
+
+          /* ── card-02 · caption beat A [0.3667 → 2.9667] ────────────────── */
+          enter("card-02", 0.3667, 0.25);
+          tl.fromTo(
+            el("card-02", "#card-02-tick"),
+            { width: 0 },
+            { width: 992, duration: 2.4, ease: "none" },
+            0.4667,
+          );
+          tl.set(el("card-02", "#card-02-pb"), { opacity: 0, visibility: "hidden" }, 0.3667);
+          words(el("card-02", "#card-02-pa"), 0.3667);
+          tl.to(
+            el("card-02", "#card-02-pa"),
+            { opacity: 0, y: -12, duration: 0.2, ease: "power2.in" },
+            1.6,
+          );
+          tl.set(el("card-02", "#card-02-pa"), { visibility: "hidden" }, 1.8);
+          tl.set(el("card-02", "#card-02-pb"), { opacity: 1, visibility: "visible" }, 1.8333);
+          words(el("card-02", "#card-02-pb"), 1.8333);
+          exit("card-02", 2.7333, 0.23, 2.9667);
+
+          /* ── card-03 · hero drop in the silence [3.0667 → 5.2333] ──────── */
+          enter("card-03", 3.0667, 0.3);
+          tl.fromTo(
+            el("card-03", "#card-03-scrim"),
+            { opacity: 0 },
+            { opacity: 1, duration: 0.4, ease: "power2.out" },
+            3.0667,
+          );
+          tl.fromTo(
+            el("card-03", "#card-03-slab-a"),
+            { opacity: 0, x: 320 },
+            { opacity: 1, x: 0, duration: 0.46, ease: "power3.out" },
+            3.1333,
+          );
+          tl.fromTo(
+            el("card-03", "#card-03-slab-c"),
+            { opacity: 0, x: -170 },
+            { opacity: 1, x: 0, duration: 0.46, ease: "power3.out" },
+            3.2333,
+          );
+          tl.fromTo(
+            el("card-03", "#card-03-kicker"),
+            { opacity: 0 },
+            { opacity: 1, duration: 0.3, ease: "power2.out" },
+            3.3,
+          );
+          tl.fromTo(
+            el("card-03", "#card-03-stripe"),
+            { width: 0 },
+            { width: 1140, duration: 0.55, ease: "power2.out" },
+            3.3667,
+          );
+          tl.fromTo(
+            el("card-03", "#card-03-numeral"),
+            { opacity: 0, scale: 0.6 },
+            { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(1.6)" },
+            3.5,
+          );
+          tl.fromTo(
+            el("card-03", "#card-03-t1"),
+            { clipPath: "inset(0 100% 0 0)" },
+            { clipPath: "inset(0 0% 0 0)", duration: 0.42, ease: "power2.inOut" },
+            3.7,
+          );
+          tl.fromTo(
+            el("card-03", "#card-03-t2"),
+            { clipPath: "inset(0 100% 0 0)" },
+            { clipPath: "inset(0 0% 0 0)", duration: 0.42, ease: "power2.inOut" },
+            3.8,
+          );
+          exit("card-03", 4.9333, 0.3, 5.2333);
+
+          /* ── card-04 · caption beat B [5.3000 → 7.9000] ────────────────── */
+          enter("card-04", 5.3, 0.25);
+          tl.fromTo(
+            el("card-04", "#card-04-tick"),
+            { width: 0 },
+            { width: 992, duration: 2.4, ease: "none" },
+            5.4,
+          );
+          tl.set(el("card-04", "#card-04-pb"), { opacity: 0, visibility: "hidden" }, 5.3);
+          words(el("card-04", "#card-04-pa"), 5.3);
+          tl.to(
+            el("card-04", "#card-04-pa"),
+            { opacity: 0, y: -12, duration: 0.2, ease: "power2.in" },
+            6.4667,
+          );
+          tl.set(el("card-04", "#card-04-pa"), { visibility: "hidden" }, 6.6667);
+          tl.set(el("card-04", "#card-04-pb"), { opacity: 1, visibility: "visible" }, 6.7);
+          words(el("card-04", "#card-04-pb"), 6.7);
+          exit("card-04", 7.6667, 0.23, 7.9);
+
+          /* ── card-05 · outro CTA [7.9667 → 9.1000] ─────────────────────── */
+          enter("card-05", 7.9667, 0.3);
+          tl.fromTo(
+            el("card-05", "#card-05-scrim"),
+            { opacity: 0 },
+            { opacity: 1, duration: 0.34, ease: "power2.out" },
+            7.9667,
+          );
+          tl.fromTo(
+            el("card-05", "#card-05-bar"),
+            { width: 0 },
+            { width: 300, duration: 0.46, ease: "power2.out" },
+            8.1,
+          );
+          tl.fromTo(
+            el("card-05", "#card-05-title"),
+            { clipPath: "inset(0 100% 0 0)" },
+            { clipPath: "inset(0 0% 0 0)", duration: 0.44, ease: "power2.inOut" },
+            8.2,
+          );
+          tl.fromTo(
+            el("card-05", "#card-05-detail"),
+            { opacity: 0 },
+            { opacity: 1, duration: 0.3, ease: "power2.out" },
+            8.4333,
+          );
+          tl.fromTo(
+            el("card-05", "#card-05-chip"),
+            { opacity: 0, x: -80 },
+            { opacity: 1, x: 0, duration: 0.4, ease: "power3.out" },
+            8.4667,
+          );
+          tl.fromTo(
+            el("card-05", "#card-05-dot"),
+            { opacity: 0, scale: 0.6 },
+            { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(1.6)" },
+            8.7,
+          );
+          tl.set(host("card-05"), { visibility: "hidden" }, 9.1);
+
+          /* ── Camera: slow punch-in across the silence, released on beat B ── */
+          tl.to("#video-wrap", { scale: 1.075, duration: 2.2, ease: "power1.inOut" }, 3.0667);
+          tl.to("#video-wrap", { scale: 1.0, duration: 0.6, ease: "power2.out" }, 5.2667);
+
+          window.__timelines["talking-head-recut"] = tl;
+        })();
+      </script>
+    </div>
+  </body>
+</html>

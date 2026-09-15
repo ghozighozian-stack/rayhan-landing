@@ -1,0 +1,180 @@
+<div class="card" data-card-id="card-03">
+  <style>
+    .card[data-card-id="card-03"] .root {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+      background: transparent;
+      color: var(--ink);
+      font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+    }
+    .card[data-card-id="card-03"] .scrim {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 760px;
+      bottom: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(10, 10, 10, 0) 0%,
+        rgba(10, 10, 10, 0.62) 34%,
+        rgba(10, 10, 10, 0.88) 100%
+      );
+    }
+    .card[data-card-id="card-03"] .slab-a {
+      position: absolute;
+      right: 0;
+      top: 812px;
+      width: 306px;
+      height: 158px;
+      background: var(--accent-0);
+    }
+    .card[data-card-id="card-03"] .slab-c {
+      position: absolute;
+      left: 0;
+      top: 1006px;
+      width: 152px;
+      height: 92px;
+      background: var(--accent-2);
+    }
+    .card[data-card-id="card-03"] .stripe-wrap {
+      position: absolute;
+      left: -30px;
+      top: 1128px;
+      width: 1140px;
+      height: 10px;
+      overflow: hidden;
+      transform: rotate(-4deg);
+    }
+    .card[data-card-id="card-03"] .stripe {
+      display: block;
+      width: 0;
+      height: 10px;
+      background: var(--accent-3);
+    }
+    .card[data-card-id="card-03"] .kicker {
+      position: absolute;
+      left: 56px;
+      top: 1008px;
+      padding: 9px 16px;
+      background: var(--ink);
+      color: #0a0a0a;
+      font-size: 22px;
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: 0.26em;
+    }
+    .card[data-card-id="card-03"] .lockup {
+      position: absolute;
+      left: 56px;
+      right: 56px;
+      top: 1240px;
+      display: flex;
+      align-items: center;
+      gap: 34px;
+    }
+    .card[data-card-id="card-03"] .numeral {
+      display: block;
+      font-size: 344px;
+      font-weight: 700;
+      line-height: 0.82;
+      letter-spacing: -0.06em;
+      color: var(--accent-1);
+    }
+    .card[data-card-id="card-03"] .title {
+      display: block;
+      margin: 0;
+    }
+    .card[data-card-id="card-03"] .title-line {
+      display: block;
+      font-size: 92px;
+      font-weight: 700;
+      line-height: 0.98;
+      letter-spacing: -0.035em;
+      color: var(--accent-3);
+    }
+  </style>
+
+  <div class="root">
+    <div
+      id="card-03-scrim"
+      class="scrim"
+      data-anim="fade-in"
+      data-anim-at="0"
+      data-anim-duration="0.4"
+    ></div>
+
+    <div
+      id="card-03-slab-a"
+      class="slab-a"
+      data-anim="slide-in"
+      data-anim-at="0.08"
+      data-anim-duration="0.46"
+      data-anim-from="right"
+      data-anim-distance="320"
+    ></div>
+    <div
+      id="card-03-slab-c"
+      class="slab-c"
+      data-layout-allow-overflow
+      data-anim="slide-in"
+      data-anim-at="0.18"
+      data-anim-duration="0.46"
+      data-anim-from="left"
+      data-anim-distance="170"
+    ></div>
+
+    <span class="stripe-wrap" data-layout-allow-overflow>
+      <span
+        id="card-03-stripe"
+        class="stripe"
+        data-layout-allow-overflow
+        data-anim="grow-x"
+        data-anim-at="0.3"
+        data-anim-duration="0.55"
+        data-anim-target-w="1140"
+      ></span>
+    </span>
+
+    <span
+      id="card-03-kicker"
+      class="kicker"
+      data-anim="fade-in"
+      data-anim-at="0.22"
+      data-anim-duration="0.3"
+      >KOLEKSI KAMI</span
+    >
+
+    <div class="lockup">
+      <span
+        id="card-03-numeral"
+        class="numeral"
+        data-anim="scale-pop"
+        data-anim-at="0.42"
+        data-anim-duration="0.5"
+        >5</span
+      >
+      <span class="title">
+        <span
+          id="card-03-t1"
+          class="title-line"
+          data-anim="mask-reveal"
+          data-anim-at="0.62"
+          data-anim-duration="0.42"
+          data-anim-direction="left"
+          >PILIHAN</span
+        >
+        <span
+          id="card-03-t2"
+          class="title-line"
+          data-anim="mask-reveal"
+          data-anim-at="0.74"
+          data-anim-duration="0.42"
+          data-anim-direction="left"
+          >FAVORIT</span
+        >
+      </span>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,88 @@
+<div class="card" data-card-id="card-01">
+  <style>
+    .card[data-card-id="card-01"] .root {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+      background: transparent;
+      color: var(--ink);
+      font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+    }
+    .card[data-card-id="card-01"] .stamp {
+      position: absolute;
+      left: 56px;
+      top: 104px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 14px;
+    }
+    .card[data-card-id="card-01"] .mark {
+      display: block;
+      padding: 14px 22px 16px;
+      background: var(--accent-0);
+      color: #24170c;
+      font-size: 42px;
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: -0.02em;
+      box-shadow: 8px 8px 0 rgba(10, 10, 10, 0.55);
+    }
+    .card[data-card-id="card-01"] .rule-wrap {
+      display: block;
+      width: 300px;
+      height: 6px;
+      overflow: hidden;
+    }
+    .card[data-card-id="card-01"] .rule {
+      display: block;
+      width: 0;
+      height: 6px;
+      background: var(--accent-1);
+    }
+    .card[data-card-id="card-01"] .meta {
+      display: block;
+      padding: 7px 12px;
+      background: rgba(10, 10, 10, 0.72);
+      color: var(--accent-3);
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: 0.22em;
+    }
+  </style>
+
+  <div class="root">
+    <div class="stamp">
+      <span
+        id="card-01-mark"
+        class="mark"
+        data-anim="slide-in"
+        data-anim-at="0.05"
+        data-anim-duration="0.45"
+        data-anim-from="left"
+        data-anim-distance="90"
+        >RAYHAN.AK</span
+      >
+      <span class="rule-wrap">
+        <span
+          id="card-01-rule"
+          class="rule"
+          data-anim="grow-x"
+          data-anim-at="0.34"
+          data-anim-duration="0.4"
+          data-anim-target-w="300"
+        ></span>
+      </span>
+      <span
+        id="card-01-meta"
+        class="meta"
+        data-anim="fade-in"
+        data-anim-at="0.5"
+        data-anim-duration="0.35"
+        >STREETWEAR × MODEST WEAR</span
+      >
+    </div>
+  </div>
+</div>
