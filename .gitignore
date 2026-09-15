@@ -1,0 +1,12 @@
+# Video working files: large binaries and staged asset copies, all regenerated
+# from the source upload or from .agents/skills. The composition source
+# (template, cards, build script, storyboard) stays tracked.
+videos/**/*.mov
+videos/**/*.mp4
+videos/**/*.mp3
+videos/**/*.wav
+videos/**/frames/
+videos/**/verify/
+videos/**/snapshots/
+videos/**/public/fonts/
+videos/**/public/vendor/

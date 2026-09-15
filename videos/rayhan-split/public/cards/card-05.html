@@ -1,0 +1,105 @@
+<div class="card" data-card-id="card-05">
+  <style>
+    .card[data-card-id="card-05"] .root {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+      background: transparent;
+      color: var(--ink);
+      font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+    }
+    .card[data-card-id="card-05"] .bar-top {
+      position: absolute;
+      left: 64px;
+      top: 316px;
+      width: 0;
+      height: 12px;
+      background: var(--accent-0);
+    }
+    .card[data-card-id="card-05"] .lockup {
+      position: absolute;
+      left: 64px;
+      right: 64px;
+      top: 378px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 28px;
+    }
+    .card[data-card-id="card-05"] .title {
+      display: block;
+      margin: 0;
+      font-size: 112px;
+      font-weight: 700;
+      line-height: 0.94;
+      letter-spacing: -0.045em;
+      color: var(--ink);
+    }
+    .card[data-card-id="card-05"] .detail {
+      display: block;
+      padding: 10px 20px;
+      background: var(--accent-1);
+      color: #2a1c0d;
+      font-size: 34px;
+      font-weight: 700;
+      line-height: 1;
+    }
+    .card[data-card-id="card-05"] .wordmark-chip {
+      position: absolute;
+      left: 64px;
+      bottom: 86px;
+      display: block;
+      padding: 14px 24px 18px;
+      background: var(--ink);
+      color: var(--accent-3);
+      font-size: 46px;
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: -0.02em;
+      box-shadow: 10px 10px 0 var(--accent-0);
+    }
+  </style>
+
+  <div class="root">
+    <span
+      id="card-05-bar"
+      class="bar-top"
+      data-anim="grow-x"
+      data-anim-at="0.12"
+      data-anim-duration="0.46"
+      data-anim-target-w="360"
+    ></span>
+
+    <div class="lockup">
+      <span
+        id="card-05-title"
+        class="title"
+        data-anim="mask-reveal"
+        data-anim-at="0.22"
+        data-anim-duration="0.44"
+        data-anim-direction="left"
+        >PESAN SEKARANG</span
+      >
+      <span
+        id="card-05-detail"
+        class="detail"
+        data-anim="fade-in"
+        data-anim-at="0.46"
+        data-anim-duration="0.3"
+        >via WhatsApp</span
+      >
+    </div>
+
+    <span
+      id="card-05-chip"
+      class="wordmark-chip"
+      data-anim="slide-in"
+      data-anim-at="0.5"
+      data-anim-duration="0.4"
+      data-anim-from="left"
+      data-anim-distance="80"
+      >RAYHAN.AK</span
+    >
+  </div>
+</div>

@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 3,
+  "composition": {
+    "fps": 30,
+    "width": 1080,
+    "height": 1920,
+    "durationSeconds": 9.1,
+    "layout": "portrait",
+    "themeId": "craft",
+    "seed": 42
+  },
+  "videoTrack": {
+    "sourcePath": "input-video.mp4",
+    "startSec": 0,
+    "endSec": 9.1,
+    "bounds": { "x": 0, "y": 0, "width": 1080, "height": 1920 }
+  },
+  "subtitles": {
+    "enabled": true,
+    "note": "Caption copy is AUTHORED, not transcribed. Whisper model weights were unreachable (huggingface.co blocked by egress policy), so the spoken words are unknown. Caption cards are placed only over measured speech energy (0.36-2.96s and 5.30-7.90s) so text appears when the speaker is actually talking. Every phrase is lifted from the RAYHAN.AK landing page copy so no new product claim is asserted."
+  },
+  "audioAnalysis": {
+    "method": "RMS envelope, 20ms hop, -22dB threshold relative to peak",
+    "speechSegments": [
+      { "startSec": 0.36, "endSec": 2.96 },
+      { "startSec": 5.3, "endSec": 7.9 }
+    ],
+    "pauseSec": { "startSec": 2.96, "endSec": 5.3 },
+    "note": "The 2.34s pause is the hero-card window - the speaker holds the camera with no speech, so a graphic can own the frame without fighting a caption."
+  },
+  "cards": [
+    {
+      "id": "card-01",
+      "intent": "Brand stamp. Land the mark in the first half-second so the clip is identified before anything is said.",
+      "startSec": 0.2,
+      "endSec": 1.6,
+      "accentIndex": 0,
+      "zone": "video-overlay",
+      "archetype": "corner-stamp",
+      "transition": "fade",
+      "contentHints": {
+        "kicker": "RAYHAN.AK",
+        "detail": "STREETWEAR × MODEST WEAR"
+      }
+    },
+    {
+      "id": "card-02",
+      "intent": "Caption beat A. Authored subtitle over the first speech block, in two kinetic phrases that open the brand sentence.",
+      "startSec": 0.3667,
+      "endSec": 2.9667,
+      "accentIndex": 1,
+      "zone": "lower-third",
+      "archetype": "kinetic-caption",
+      "transition": "cut",
+      "contentHints": {
+        "phraseA": "Streetwear & modest wear",
+        "phraseB": "buat Gen Z Indonesia",
+        "phraseASec": [0.3667, 1.6667],
+        "phraseBSec": [1.7333, 2.9667]
+      }
+    },
+    {
+      "id": "card-03",
+      "intent": "Hero drop in the silence. Colour-clash slabs and a huge numeral own the pause while the speaker just holds the camera.",
+      "startSec": 3.0667,
+      "endSec": 5.2333,
+      "accentIndex": 2,
+      "zone": "video-overlay",
+      "archetype": "geom-hero",
+      "transition": "wipe",
+      "contentHints": {
+        "kicker": "KOLEKSI KAMI",
+        "numeral": "5",
+        "title": "PILIHAN FAVORIT"
+      }
+    },
+    {
+      "id": "card-04",
+      "intent": "Caption beat B. Authored subtitle over the second speech block, closing the sentence card-02 opened.",
+      "startSec": 5.3,
+      "endSec": 7.9,
+      "accentIndex": 3,
+      "zone": "lower-third",
+      "archetype": "kinetic-caption",
+      "transition": "cut",
+      "contentHints": {
+        "phraseA": "yang lagi hits",
+        "phraseB": "sekarang di RAYHAN.AK",
+        "phraseASec": [5.3, 6.5333],
+        "phraseBSec": [6.6, 7.9]
+      }
+    },
+    {
+      "id": "card-05",
+      "intent": "Outro CTA over the closing gesture. Wordmark plus the one action the landing page asks for.",
+      "startSec": 7.9667,
+      "endSec": 9.1,
+      "accentIndex": 4,
+      "zone": "fullscreen",
+      "archetype": "cta-lockup",
+      "transition": "fade",
+      "contentHints": {
+        "title": "PESAN SEKARANG",
+        "detail": "via WhatsApp",
+        "wordmark": "RAYHAN.AK"
+      }
+    }
+  ]
+}
